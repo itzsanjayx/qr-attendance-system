@@ -6,10 +6,28 @@
   <title>QR Attendance System</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 </head>
 <body>
-  <h1>Welcome to QR Attendance System</h1>
+  <h1>QR Attendance System</h1>
+
+  <!-- Scan QR Code -->
   <button onclick="startScanner()">Scan QR Code</button>
+  <div id="scanner-area"></div>
+
+  <hr>
+
+  <!-- Generate QR Code -->
+  <h2>Generate QR Code</h2>
+  <input type="text" id="qrText" placeholder="Enter text for QR">
+  <button onclick="generateQRCode()">Generate</button>
+  <div id="qrcode"></div>
+  <a id="downloadQR" style="display:none;" download="qr-code.png">Download QR</a>
+
+  <hr>
+
+  <!-- Download Attendance List -->
+  <button onclick="downloadAttendance()">Download Attendance List</button>
 
   <script src="script.js"></script>
 </body>
